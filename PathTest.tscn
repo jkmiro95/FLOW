@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Topdown_vehicle_sprites_pack/Audi.png" type="Texture" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -3.401, 0, 0, 0, 0, 0, -23.8066, -40.8112, 0, 0, 0, 0, -136.718, -84.3432, 0, 0, 0, 0, -193.853, -189.092, 0, 0, 0, 0, -392.468, -219.02, 0, 0, 0, 0, -490.415, -372.742, 0, 0, 0, 0, -580.2, -363.22, 0, 0, 0, 0, -350.45, -189.149 )
+}
+
+[node name="Path2D" type="Path2D" index="0"]
+
+position = Vector2( 850, 500 )
+curve = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
+
+position = Vector2( -3.401, 0 )
+rotation = -2.03444
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="Sprite" type="Sprite" parent="PathFollow2D" index="0"]
+
+position = Vector2( -4.38041, 8.76085 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+
