@@ -11,9 +11,5 @@ config_version=3
 [application]
 
 config/name="Traffic"
-run/main_scene="res://PathTest.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
