@@ -1,10 +1,12 @@
 extends Node
 
 # EXPORT -------------------------
-export(PackedScene) var cars 
+export(Array) var cars 
+export var deployDelay = 1
 
 # ONREADY ------------------------
 
+onready var timer = $"../DeployTimer"
 
 # VARS ---------------------------
 
@@ -12,5 +14,11 @@ var paths
 
 func _ready():
 	paths = get_children()
-	print(paths)
+	timer.wait_time = deployDelay
 
+func _on_DeployTimer_timeout():
+	print("tick!")
+	var car = cars[rand_range(0, cars.size() -1)].instance()
+	var path = paths[rand_range(0, paths.size())]
+	path.add_child(car)
+	timer.start()

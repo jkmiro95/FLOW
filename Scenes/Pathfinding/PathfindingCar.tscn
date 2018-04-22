@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Pathfinding/PathfindingCar.gd" type="Script" id=1]
-[ext_resource path="res://Images/Vehicles/Audi.png" type="Texture" id=2]
+[ext_resource path="res://Images/Test/TestCircle.png" type="Texture" id=2]
 
 [node name="PathFollow" type="PathFollow2D"]
 
@@ -17,7 +17,7 @@ CAR_SPEED = 80
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
