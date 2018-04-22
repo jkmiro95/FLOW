@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TrafficCollider.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Pause" ]
+
+[node name="BlueCar" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 7.53662, 0 )
+
+[node name="TrafficCollider" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 281.872, 328.6 )
+rotation = -1.5592
+
+
