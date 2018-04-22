@@ -8,8 +8,15 @@
 custom_solver_bias = 0.0
 extents = Vector2( 17.6736, 3.22834 )
 
-[node name="BlueCar" type="Node2D" index="0"]
+[node name="BlueCar" type="PathFollow2D" index="0"]
 
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
@@ -39,7 +46,5 @@ texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_RigidBody2D_body_entered"]
 
 
