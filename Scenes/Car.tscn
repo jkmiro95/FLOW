@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 17.6736, 3.22834 )
+extents = Vector2( 5.27899, 4.22567 )
 
-[node name="BlueCar" type="PathFollow2D" index="0"]
+[node name="BlueCar" type="PathFollow2D"]
 
 offset = 0.0
 h_offset = 0.0
@@ -18,7 +18,8 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Transform" ]
+CAR_SPEED = 200
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -33,6 +34,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+position = Vector2( -3.00002, -6 )
 rotation = -1.57134
 scale = Vector2( 3.78788, 8.99214 )
 shape = SubResource( 1 )
@@ -40,8 +42,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Mini_truck" type="Sprite" parent="Area2D" index="1"]
 
-rotation = -1.57134
-scale = Vector2( 0.732224, 0.87011 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
