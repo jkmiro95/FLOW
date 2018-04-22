@@ -23,7 +23,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Area2D" type="Area2D" index="0"]
+[node name="Area2D" type="Area2D"]
 
 position = Vector2( 501, 277 )
 input_pickable = true
