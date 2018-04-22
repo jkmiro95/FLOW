@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/TrafficController.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 131.131, 16.4644 )
 
-[node name="TrafficCollider" type="Node2D"]
+[node name="TrafficCollider" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
