@@ -7,10 +7,10 @@ path="res://.import/Mini_truck.png-c6ac69f6caf488a3f32465deb221fd7e.stex"
 [deps]
 
 source_file="res://Images/Vehicles/Mini_truck.png"
-source_md5="d7fc97188bc2694ab40d63137224b1d4"
+source_md5="f4ba11b6bdc406b50fd10bcf0bdfb977"
 
 dest_files=[ "res://.import/Mini_truck.png-c6ac69f6caf488a3f32465deb221fd7e.stex" ]
-dest_md5="6fdd90254f73005bf96a00916e41c3b9"
+dest_md5="daaf34672f384083804680f9256bd878"
 
 [params]
 
