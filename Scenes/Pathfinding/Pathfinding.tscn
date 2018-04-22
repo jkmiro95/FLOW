@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Images/Map/MapSketch.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/PathManager.gd" type="Script" id=2]
@@ -23,6 +23,13 @@ _data = {
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 82.4159, 13.2286, 0, 0, 8.61549, -61.3027, 88.9969, -468.669, 0, 0, 0, 0, 140.829, -516.989, 0, 0, 0, 0, 418.162, -507.906 )
+}
+
+[sub_resource type="Curve2D" id=4]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8.04776, 17.4514, 0, 0, 0, 0, 2.94699, -1040.99 )
 }
 
 [node name="Pathfinding" type="Node" index="0"]
@@ -60,12 +67,19 @@ position = Vector2( 1114.86, 270.147 )
 rotation = -1.57883
 curve = SubResource( 3 )
 
+[node name="Path2D" type="Path2D" parent="Paths" index="3"]
+
+position = Vector2( 1114.86, 270.147 )
+rotation = -1.57883
+curve = SubResource( 4 )
+
 [node name="DeployTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = true
+_sections_unfolded = [ "Pause" ]
 
 [connection signal="timeout" from="DeployTimer" to="Paths" method="_on_DeployTimer_timeout"]
 
