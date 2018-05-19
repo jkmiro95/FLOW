@@ -7,6 +7,9 @@ export var CAR_SPEED = 200
 var isMoving=true
 var isStoppedBeforeLights = false
 
+onready var explosion = load("res://Scenes/Explosion.tscn");
+
+
 func _ready():
 	add_to_group("Cars")
 	# Called every time the node is added to the scene.
@@ -39,11 +42,16 @@ func stop():
 
 
 func _on_Area2D_area_entered(area):
-	
-	print("COLLISION")
-	print(area.get_groups())
+
 	if area.is_in_group("Cars"):
-		print("IN CARS")
-		CAR_SPEED = 0
+		print("CAR-CAR COLLISION")
+		var explosionInstance = explosion.instance()
+		explosionInstance.position = position
+		get_parent().add_child(explosionInstance);
+		
+	elif area.is_in_group("Lights"):
+		isStoppedBeforeLights = true
+		print("CAR-LIGHT COLLISION")
 	
+	CAR_SPEED = 0
 	pass # replace with function body
