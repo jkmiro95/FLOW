@@ -21,7 +21,9 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
 CAR_SPEED = 200
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="." index="0" groups=[
+"Cars",
+]]
 
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
@@ -32,13 +34,16 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" groups=[
+"Cars",
+]]
 
-position = Vector2( -3.00002, -6 )
+position = Vector2( -2.50026, -2.83631 )
 rotation = -1.57134
-scale = Vector2( 3.78788, 8.99214 )
+scale = Vector2( 2.53063, 8.36954 )
+z_index = 1
 shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Mini_truck" type="Sprite" parent="Area2D" index="1"]
 
@@ -46,6 +51,6 @@ scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 

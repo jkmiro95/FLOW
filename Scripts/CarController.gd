@@ -5,9 +5,10 @@ extends Node2D
 
 export var CAR_SPEED = 200
 var isMoving=true
+var isStoppedBeforeLights = false
 
 func _ready():
-	
+	add_to_group("Cars")
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
@@ -35,12 +36,14 @@ func stop():
 	
 	#stop the cars
 	pass
+
+
+func _on_Area2D_area_entered(area):
 	
-	
-func _on_Area2D_body_entered(body):
-	
-	#checkBody
-	#if traffic red light = true || car
-	isMoving=false
+	print("COLLISION")
+	print(area.get_groups())
+	if area.is_in_group("Cars"):
+		print("IN CARS")
+		CAR_SPEED = 0
 	
 	pass # replace with function body
