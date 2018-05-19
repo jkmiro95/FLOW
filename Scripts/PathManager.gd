@@ -1,9 +1,9 @@
 extends Node
 
 # EXPORT -------------------------
-export(Array) var cars 
-export var deployDelay = 1
-
+var cars = [] 
+export var deployDelay = 2
+onready var carobj = load("res://Scenes/Car.tscn");
 # ONREADY ------------------------
 
 onready var timer = $"../DeployTimer"
@@ -13,6 +13,7 @@ onready var timer = $"../DeployTimer"
 var paths
 
 func _ready():
+	cars.push_back(carobj)
 	paths = get_children()
 	timer.wait_time = deployDelay
 
