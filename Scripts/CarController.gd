@@ -1,57 +1,47 @@
 extends Node2D
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 
 export var CAR_SPEED = 200
-var isMoving=true
+var isActive=true
 var isStoppedBeforeLights = false
 
 onready var explosion = load("res://Scenes/Explosion.tscn");
 
-
 func _ready():
 	add_to_group("Cars")
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
-	
 func _process(delta):
 	set_offset(get_offset() + (CAR_SPEED*delta))
-	
-func _physics_process(delta):
-	# Called every frame. Delta is time since last frame.
-	# Update game logic here.
-	#if isMoving:
-		#moveRight()
-	
-	pass
-	
-	
-func moveRight():
-	position += Vector2(-3,0)
-	
-	pass
-	
-	
-func stop():
-	
-	#stop the cars
-	pass
 
+func _physics_process(delta):
+	pass
 
 func _on_Area2D_area_entered(area):
-
+	if(!isActive):
+		return
 	if area.is_in_group("Cars"):
-		print("CAR-CAR COLLISION")
-		var explosionInstance = explosion.instance()
-		explosionInstance.position = position
-		get_parent().add_child(explosionInstance);
-		
+		_handleCarCollision(area)
 	elif area.is_in_group("Lights"):
-		isStoppedBeforeLights = true
-		print("CAR-LIGHT COLLISION")
+		_handleLightCollision(area)
 	
+	_stopCar()
+
+func _stopCar():
 	CAR_SPEED = 0
-	pass # replace with function body
+	isActive = false;
+
+func _handleCarCollision(area):
+	print("CAR-CAR COLLISION")
+	if(area.get_parent().isStoppedBeforeLights):
+		isStoppedBeforeLights = true
+	else:
+		_addExplosion()
+
+func _handleLightCollision(area):
+	isStoppedBeforeLights = true
+	print("CAR-LIGHT COLLISION")
+
+func _addExplosion():
+	var explosionInstance = explosion.instance()
+	explosionInstance.position = position
+	get_parent().add_child(explosionInstance);

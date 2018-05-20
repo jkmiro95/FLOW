@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Images/Map/MapSketch.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/PathManager.gd" type="Script" id=2]
@@ -18,28 +18,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 52.7762, 23.8173, 0, 0, 0, 0, 52.7673, -1044.35 )
 }
 
-[sub_resource type="Curve2D" id=3]
-
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 82.4159, 13.2286, 0, 0, 8.61549, -61.3027, 88.9969, -468.669, 0, 0, 0, 0, 140.829, -516.989, 0, 0, 0, 0, 418.162, -507.906 )
-}
-
-[sub_resource type="Curve2D" id=4]
-
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 8.04776, 17.4514, 0, 0, 0, 0, 2.94699, -1040.99 )
-}
-
-[sub_resource type="Curve2D" id=5]
-
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 566.137, 872.556, 0, 0, 0, 0, 563.62, -298.097 )
-}
-
-[node name="Pathfinding" type="Node"]
+[node name="Pathfinding" type="Node" index="0"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
@@ -68,51 +47,6 @@ position = Vector2( 1114.86, 270.147 )
 rotation = -1.57883
 curve = SubResource( 2 )
 _sections_unfolded = [ "Z Index" ]
-
-[node name="Path1-3" type="Path2D" parent="Paths" index="2"]
-
-position = Vector2( 1114.86, 270.147 )
-rotation = -1.57883
-curve = SubResource( 3 )
-
-[node name="Path1-4" type="Path2D" parent="Paths" index="3"]
-
-position = Vector2( 1114.86, 270.147 )
-rotation = -1.57883
-curve = SubResource( 4 )
-
-[node name="Path2-1" type="Path2D" parent="Paths" index="4"]
-
-position = Vector2( 464.686, -265.923 )
-rotation = -3.12676
-curve = SubResource( 4 )
-
-[node name="Path2-2" type="Path2D" parent="Paths" index="5"]
-
-position = Vector2( 510.951, -258.52 )
-rotation = -3.12676
-curve = SubResource( 4 )
-
-[node name="Path3-1" type="Path2D" parent="Paths" index="6"]
-
-position = Vector2( 22.8529, 315.916 )
-rotation = -4.71355
-curve = SubResource( 4 )
-
-[node name="Path3-2" type="Path2D" parent="Paths" index="7"]
-
-position = Vector2( 19.5288, 365.778 )
-rotation = -4.71355
-curve = SubResource( 4 )
-
-[node name="Path4-1" type="Path2D" parent="Paths" index="8"]
-
-curve = SubResource( 5 )
-
-[node name="Path4-2" type="Path2D" parent="Paths" index="9"]
-
-position = Vector2( 47.833, -2.51755 )
-curve = SubResource( 5 )
 
 [node name="DeployTimer" type="Timer" parent="." index="2"]
 
