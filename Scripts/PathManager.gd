@@ -2,7 +2,7 @@ extends Node
 
 # EXPORT -------------------------
 var cars = [] 
-export var deployDelay = 1
+export var deployDelay = 3
 onready var carobj = load("res://Scenes/Car.tscn");
 # ONREADY ------------------------
 

@@ -35,16 +35,18 @@ __meta__ = {
 ]]
 
 script = ExtResource( 2 )
-deployDelay = 1
+deployDelay = 3
 
 [node name="Path1-1" type="Path2D" parent="Paths" index="0"]
 
+position = Vector2( -88.6252, -18.4549 )
 curve = SubResource( 1 )
 
 [node name="Path1-2" type="Path2D" parent="Paths" index="1"]
 
-position = Vector2( 1114.86, 270.147 )
+position = Vector2( 1026.24, 251.669 )
 rotation = -1.57883
+scale = Vector2( 0.999571, 1 )
 curve = SubResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 

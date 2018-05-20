@@ -56,7 +56,7 @@ __meta__ = {
 ]]
 
 script = ExtResource( 2 )
-deployDelay = 1
+deployDelay = 3
 
 [node name="Path1-1" type="Path2D" parent="Paths" index="0"]
 
