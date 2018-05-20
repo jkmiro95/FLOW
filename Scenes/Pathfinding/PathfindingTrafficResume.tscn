@@ -18,7 +18,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 52.7762, 23.8173, 0, 0, 0, 0, 52.7673, -1044.35 )
 }
 
-[node name="Pathfinding" type="Node" index="0"]
+[node name="Pathfinding" type="Node"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 

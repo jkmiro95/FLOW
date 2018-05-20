@@ -4,10 +4,10 @@ export var SPEED = 200
 
 var SPEED_CURRENT = 0; 
 var SPEED_VEL_CURRENT = 0
-var SPEED_VEL_MOVING = 1.1
-var SPEED_VEL_BRAKING = 0.0
+var SPEED_VEL_MOVING = 1.5
+var SPEED_VEL_BRAKING = 0.5
 var SPEED_INITIAL = 1; 
-var SPEED_MAX = 5;
+var SPEED_MAX = 200;
 var isActive=true
 var isStoppedBeforeLights = false
 
@@ -27,7 +27,7 @@ func _process(delta):
 	elif(SPEED_CURRENT < 1):
 		SPEED_CURRENT = 0;
 			
-	set_offset(get_offset() + (SPEED_CURRENT))
+	set_offset(get_offset() + (SPEED_CURRENT * delta))
 
 func _physics_process(delta):
 	pass
@@ -43,7 +43,7 @@ func _on_Area2D_area_entered(area):
 	_stopCar()
 
 func _stopCar():
-	SPEED_CURRENT = 0
+	#SPEED_CURRENT = 0
 	SPEED_VEL_CURRENT = SPEED_VEL_BRAKING
 	isActive = false;
 

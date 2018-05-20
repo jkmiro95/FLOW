@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5.27899, 4.58047 )
+extents = Vector2( 3.86608, 3.42208 )
 
 [node name="BlueCar" type="PathFollow2D"]
 
@@ -38,7 +38,7 @@ _sections_unfolded = [ "Transform" ]
 "Cars",
 ]]
 
-position = Vector2( -3.50026, -2.83631 )
+position = Vector2( -3.23674, -2.09983 )
 rotation = -1.57134
 scale = Vector2( 2.53063, 8.36954 )
 z_index = 1
@@ -48,7 +48,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="Mini_truck" type="Sprite" parent="Area2D" index="1"]
 
 position = Vector2( 0, 0.527039 )
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
