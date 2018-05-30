@@ -39,7 +39,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 566.137, 872.556, 0, 0, 0, 0, 563.62, -298.097 )
 }
 
-[node name="Pathfinding" type="Node"]
+[node name="Pathfinding" type="Node" index="0"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
@@ -128,18 +128,16 @@ position = Vector2( 712.363, 183.808 )
 
 [node name="Node2D2" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 713.837, 262.159 )
-rotation = -1.57617
+position = Vector2( 712.363, 222.808 )
 
-[node name="Node2D3" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Node2D4" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 712.363, 260.808 )
+
+[node name="Node2D3" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 318.09, 513.489 )
 rotation = -3.15474
-
-[node name="Node2D4" parent="." index="6" instance=ExtResource( 3 )]
-
-position = Vector2( 715.304, 221.397 )
-rotation = -4.68906
 
 [connection signal="timeout" from="DeployTimer" to="Paths" method="_on_DeployTimer_timeout"]
 

@@ -17,7 +17,6 @@ script = ExtResource( 1 )
 "Lights",
 ]]
 
-editor/display_folded = true
 position = Vector2( 9.03429, 0 )
 scale = Vector2( 0.129082, 1 )
 input_pickable = true
@@ -33,7 +32,7 @@ script = ExtResource( 2 )
 "Lights",
 ]]
 
-position = Vector2( 1.98471, 1.68076 )
+position = Vector2( 79.4546, 2.68076 )
 scale = Vector2( 1.30652, 1.20621 )
 shape = SubResource( 1 )
 

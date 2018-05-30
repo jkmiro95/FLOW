@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 3.86608, 3.42208 )
 
-[node name="BlueCar" type="PathFollow2D" index="0"]
+[node name="BlueCar" type="PathFollow2D"]
 
 offset = 0.0
 h_offset = 0.0
