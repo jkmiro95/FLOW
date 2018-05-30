@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 3.86608, 3.42208 )
 
-[node name="BlueCar" type="PathFollow2D"]
+[node name="BlueCar" type="PathFollow2D" index="0"]
 
 offset = 0.0
 h_offset = 0.0
@@ -25,6 +25,7 @@ SPEED = 200
 "Cars",
 ]]
 
+editor/display_folded = true
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -52,6 +53,15 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
+[node name="ResumeTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.15
+one_shot = false
+autostart = false
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="timeout" from="ResumeTimer" to="." method="_on_Timer_timeout"]
 
 

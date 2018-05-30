@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/StartScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Pathfinding/Pathfinding.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 [node name="Control" parent="." index="0" instance=ExtResource( 1 )]
 

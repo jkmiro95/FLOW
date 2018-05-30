@@ -10,7 +10,9 @@ var SPEED_INITIAL = 1;
 var SPEED_MAX = 200;
 var isActive=true
 var isStoppedBeforeLights = false
+var collidingCar;
 
+onready var resumeTimer = $ResumeTimer;
 onready var explosion = load("res://Scenes/Explosion.tscn");
 
 func _ready():
@@ -28,6 +30,10 @@ func _process(delta):
 		SPEED_CURRENT = 0;
 			
 	set_offset(get_offset() + (SPEED_CURRENT * delta))
+	
+	if(self.unit_offset > 0.95):
+		_scorePoints();
+		_destroy();
 
 func _physics_process(delta):
 	pass
@@ -37,19 +43,35 @@ func _on_Area2D_area_entered(area):
 		return
 	if area.is_in_group("Cars"):
 		_handleCarCollision(area)
+		_stopCar()
 	elif area.is_in_group("Lights"):
+		area.car = self;
 		_handleLightCollision(area)
+		_stopCar()
 	
-	_stopCar()
+	
+func resume():
+	SPEED_CURRENT = 10;
+	SPEED_VEL_CURRENT = SPEED_VEL_MOVING;
+	
+	resumeTimer.start();
+	
 
 func _stopCar():
 	#SPEED_CURRENT = 0
 	SPEED_VEL_CURRENT = SPEED_VEL_BRAKING
 	isActive = false;
 
+func _scorePoints():
+	pass;
+
+func _destroy():
+	queue_free()
+
 func _handleCarCollision(area):
 	print("CAR-CAR COLLISION")
 	if(area.get_parent().isStoppedBeforeLights):
+		area.get_parent().collidingCar = self;
 		isStoppedBeforeLights = true
 	else:
 		_addExplosion()
@@ -62,3 +84,12 @@ func _addExplosion():
 	var explosionInstance = explosion.instance()
 	explosionInstance.position = position
 	get_parent().add_child(explosionInstance);
+
+
+func _on_Timer_timeout():
+	isActive = true;
+	isStoppedBeforeLights = false;
+	
+	if(collidingCar != null):
+		collidingCar.resume();
+		collidingCar = null;

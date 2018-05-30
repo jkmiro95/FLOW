@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 131.131, 16.4644 )
 
-[node name="TrafficCollider" type="Node2D" index="0"]
+[node name="TrafficCollider" type="Node2D"]
 
 script = ExtResource( 1 )
 
