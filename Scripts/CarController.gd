@@ -86,7 +86,6 @@ func _destroy():
 	queue_free()
 
 func _handleCarCollision(area):
-	print("CAR-CAR COLLISION")
 	if(area.get_parent().isStoppedBeforeLights):
 		area.get_parent().collidingCar = self;
 		isStoppedBeforeLights = true
@@ -96,7 +95,6 @@ func _handleCarCollision(area):
 
 func _handleLightCollision(area):
 	isStoppedBeforeLights = true
-	print("CAR-LIGHT COLLISION")
 
 func _addExplosion():
 	var explosionInstance = explosion.instance()
@@ -105,6 +103,8 @@ func _addExplosion():
 
 
 func _on_Timer_timeout():
+	print("TIMEOUT");
+	resumeTimer.stop();
 	isActive = true;
 	isStoppedBeforeLights = false;
 	
