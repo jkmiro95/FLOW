@@ -7,10 +7,10 @@ path="res://.import/Ambulance.png-d5b9a9f4d76af112352d4acc74059a6b.stex"
 [deps]
 
 source_file="res://Images/Vehicles/Ambulance.png"
-source_md5="dbaea2d1e6ce316058094e946b7d4699"
+source_md5="4872d35219dd9b0c3627453570bc859f"
 
 dest_files=[ "res://.import/Ambulance.png-d5b9a9f4d76af112352d4acc74059a6b.stex" ]
-dest_md5="40fb68077b113af2ac080161a6443891"
+dest_md5="58fe12c932f6742bf648a3148156b94f"
 
 [params]
 
