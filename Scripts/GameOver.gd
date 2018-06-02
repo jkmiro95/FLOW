@@ -19,4 +19,5 @@ func _ready():
 func _on_Button_pressed():
 	$Button.hide()
 	$Label.hide()
-	emit_signal("start_game")
+	global.points = 0
+	get_tree().change_scene("res://Scenes/Pathfinding/Pathfinding.tscn")

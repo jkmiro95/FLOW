@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Images/Map/MapSketch.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/PathManager.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Light&Collider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/UI/8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/ScoreLabel.gd" type="Script" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -44,6 +46,14 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 32.7717, 112.236 )
 
+[sub_resource type="DynamicFont" id=7]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="Pathfinding" type="Node"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
@@ -62,7 +72,7 @@ __meta__ = {
 
 editor/display_folded = true
 script = ExtResource( 2 )
-deployDelay = 1
+deployDelay = 0.7
 
 [node name="Path1-1" type="Path2D" parent="Paths" index="0"]
 
@@ -168,13 +178,11 @@ rotation = -1.55476
 
 position = Vector2( 565.894, 450.993 )
 rotation = 1.56991
-scale = Vector2( 1, 1 )
 
 [node name="Node2D9" parent="Lights" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 612.894, 450.993 )
 rotation = 1.56991
-scale = Vector2( 1, 1 )
 
 [node name="Node2D10" parent="Lights" index="9" instance=ExtResource( 3 )]
 
@@ -200,6 +208,30 @@ audio_bus_name = "Master"
 
 position = Vector2( -55.0839, 26.9432 )
 shape = SubResource( 6 )
+
+[node name="ScoreLabel" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 302.0
+margin_top = 77.0
+margin_right = 342.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="timeout" from="DeployTimer" to="Paths" method="_on_DeployTimer_timeout"]
 

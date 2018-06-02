@@ -12,14 +12,17 @@ var isActive=true
 var isStoppedBeforeLights = false
 var collidingWithGameOverCollider = false
 var collidingCar;
+var t = Timer.new()
 
 onready var resumeTimer = $ResumeTimer;
 onready var explosion = load("res://Scenes/Explosion.tscn");
 
+
 func _ready():
 	add_to_group("Cars")
 	SPEED_CURRENT = SPEED_INITIAL
-	SPEED_VEL_CURRENT = SPEED_VEL_MOVING;
+	SPEED_VEL_CURRENT = SPEED_VEL_MOVING
+	t.set_wait_time(1.5)
 	pass
 
 func _process(delta):
@@ -70,16 +73,16 @@ func resume():
 func _stopCar():
 	#SPEED_CURRENT = 0
 	SPEED_VEL_CURRENT = SPEED_VEL_BRAKING
-	isActive = false;
+	isActive = false
 	
 	if(collidingWithGameOverCollider == true):
-		_gameOver();
+		_gameOver()
 
 func _scorePoints():
-	pass;
+	global.points += 1
 
 func _gameOver():
-	print("GAME OVER")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 
 func _destroy():
@@ -87,11 +90,14 @@ func _destroy():
 
 func _handleCarCollision(area):
 	if(area.get_parent().isStoppedBeforeLights):
-		area.get_parent().collidingCar = self;
+		area.get_parent().collidingCar = self
 		isStoppedBeforeLights = true
 	else:
 		_addExplosion()
-		_gameOver();
+		add_child(t)
+		t.start()
+		yield(t, "timeout")
+		_gameOver()
 
 func _handleLightCollision(area):
 	isStoppedBeforeLights = true
