@@ -10,6 +10,7 @@ var SPEED_INITIAL = 1;
 var SPEED_MAX = 200;
 var isActive=true
 var isStoppedBeforeLights = false
+var collidingWithGameOverCollider = false
 var collidingCar;
 
 onready var resumeTimer = $ResumeTimer;
@@ -38,16 +39,25 @@ func _process(delta):
 func _physics_process(delta):
 	pass
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(area):	
+	
+	if(area.is_in_group("Game_Over_Collider")):
+		collidingWithGameOverCollider = true;
+		
 	if(!isActive):
-		return
-	if area.is_in_group("Cars"):
+		pass
+		
+	elif area.is_in_group("Cars"):
 		_handleCarCollision(area)
 		_stopCar()
 	elif area.is_in_group("Lights"):
 		area.car = self;
 		_handleLightCollision(area)
 		_stopCar()
+	
+func _on_Area2D_area_exited(area):
+	if(area.is_in_group("Game_Over_Collider")):
+		collidingWithGameOverCollider = false;
 	
 	
 func resume():
@@ -61,9 +71,16 @@ func _stopCar():
 	#SPEED_CURRENT = 0
 	SPEED_VEL_CURRENT = SPEED_VEL_BRAKING
 	isActive = false;
+	
+	if(collidingWithGameOverCollider == true):
+		_gameOver();
 
 func _scorePoints():
 	pass;
+
+func _gameOver():
+	print("GAME OVER")
+
 
 func _destroy():
 	queue_free()
@@ -75,6 +92,7 @@ func _handleCarCollision(area):
 		isStoppedBeforeLights = true
 	else:
 		_addExplosion()
+		_gameOver();
 
 func _handleLightCollision(area):
 	isStoppedBeforeLights = true
