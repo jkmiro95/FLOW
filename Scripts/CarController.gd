@@ -8,6 +8,9 @@ var SPEED_VEL_MOVING = 1.5
 var SPEED_VEL_BRAKING = 0.5
 var SPEED_INITIAL = 1; 
 var SPEED_MAX = 200;
+var direction = 0;
+
+var isLightVisible = false;
 var isActive=true
 var isStoppedBeforeLights = false
 var collidingWithGameOverCollider = false
@@ -15,16 +18,28 @@ var collidingCar;
 var t = Timer.new()
 
 onready var resumeTimer = $ResumeTimer;
+onready var lightTimer = $LightTimer;
+
+onready var leftLight = $LeftLight;
+onready var rightLight = $RightLight;
+
 onready var explosion = load("res://Scenes/Explosion.tscn");
 
 
 func _ready():
 	add_to_group("Cars")
+	
+	direction = get_parent().direction;
+	_hideLights()
 	SPEED_CURRENT = SPEED_INITIAL
 	SPEED_VEL_CURRENT = SPEED_VEL_MOVING
 	t.set_wait_time(1.5)
 	pass
 
+func _hideLights():
+	leftLight.hide();
+	rightLight.hide();
+	
 func _process(delta):
 	SPEED_CURRENT *= SPEED_VEL_CURRENT
 	
@@ -34,6 +49,10 @@ func _process(delta):
 		SPEED_CURRENT = 0;
 			
 	set_offset(get_offset() + (SPEED_CURRENT * delta))
+	
+	if(self.unit_offset > 0.65):
+		lightTimer.stop();
+		_hideLights();
 	
 	if(self.unit_offset > 0.95):
 		_scorePoints();
@@ -117,3 +136,20 @@ func _on_Timer_timeout():
 	if(collidingCar != null):
 		collidingCar.resume();
 		collidingCar = null;
+
+
+func _on_LightTimer_timeout():
+	print("LIGHT TICK");
+	
+	if(direction > 0):
+		if(isLightVisible):
+			rightLight.hide()
+		else:
+			rightLight.show()
+	if(direction < 0):
+		if(isLightVisible):
+			leftLight.hide()
+		else:
+			leftLight.show()
+	
+	isLightVisible = !isLightVisible

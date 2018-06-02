@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/CarController.gd" type="Script" id=1]
 [ext_resource path="res://Images/Vehicles/Mini_truck.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/CarSpriteManager.gd" type="Script" id=3]
+[ext_resource path="res://Images/CarLight.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.86608, 3.42208 )
 
-[node name="BlueCar" type="PathFollow2D" index="0"]
+[node name="BlueCar" type="PathFollow2D"]
 
 offset = 0.0
 h_offset = 0.0
@@ -39,6 +40,7 @@ _sections_unfolded = [ "Transform" ]
 "Cars",
 ]]
 
+visible = false
 position = Vector2( -3.23674, -2.09983 )
 rotation = -1.57134
 scale = Vector2( 2.53063, 8.36954 )
@@ -50,6 +52,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 position = Vector2( 0, 0.527039 )
 scale = Vector2( 0.25, 0.25 )
+z_index = 1
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
@@ -61,10 +64,34 @@ wait_time = 0.15
 one_shot = false
 autostart = false
 
+[node name="LightTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.6
+one_shot = false
+autostart = true
+
+[node name="LeftLight" type="Sprite" parent="." index="3"]
+
+position = Vector2( 19.6965, -13.1409 )
+scale = Vector2( 0.03, 0.03 )
+z_as_relative = false
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="RightLight" type="Sprite" parent="." index="4"]
+
+position = Vector2( 19.2365, 11.4224 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 
 [connection signal="timeout" from="ResumeTimer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="LightTimer" to="." method="_on_LightTimer_timeout"]
 
 

@@ -7,6 +7,9 @@
 
 [node name="Control" parent="." index="0" instance=ExtResource( 1 )]
 
+margin_left = 3.0
+margin_right = 43.0
+
 [node name="Pathfinding" parent="." index="1" instance=ExtResource( 2 )]
 
 
