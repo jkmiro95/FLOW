@@ -1,0 +1,424 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/PathManager.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Path.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Light&Collider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/UI/8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/ScoreLabel.gd" type="Script" id=5]
+[ext_resource path="res://Images/Map/Level_1.png" type="Texture" id=6]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1216.95, 263.32, 0, 0, -155.994, 19.5514, 606.881, 264.134, 0, 0, 0, 0, 468.414, 434.366, 0, 0, 0, 0, 469.229, 939.361 )
+}
+
+[sub_resource type="Curve2D" id=8]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1237.16, 395.831, 0, 0, 0, 0, -145.328, 397.029 )
+}
+
+[sub_resource type="Curve2D" id=9]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1234, 397.003, 0, 0, -132.562, -12.2412, 667.558, 399.309, 0, 0, 0, 0, 536.861, 250.08, 0, 0, 0, 0, 541.561, -205.341 )
+}
+
+[sub_resource type="Curve2D" id=10]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -165.958, 558.662, 0, 0, 0, 0, 1247.15, 559.734 )
+}
+
+[sub_resource type="Curve2D" id=11]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -165.05, 479.332, 0, 0, 171.245, 15.2981, 388.782, 473.344, 0, 0, 0, 0, 534.857, 285.744, 0, 0, 0, 0, 532.673, -234.139 )
+}
+
+[sub_resource type="Curve2D" id=13]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1099.28, 451.486, 0, 0, -96.1903, -3.05552, 483.096, 451.941, 0, 0, 0, 0, 401.783, 646.013, 0, 0, 0, 0, 400.02, 1139.83 )
+}
+
+[sub_resource type="Curve2D" id=14]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1089.25, 423.704, 0, 0, 0, 0, 536.192, 423.002, 0, 0, 0, 0, 458.375, 420.452, 0, 0, -5.55098, 5.17457, 402.203, 433.529, 0, 0, 0, 0, 347.666, 453.628, 0, 0, 0, 0, 272.563, 457.557, 0, 0, 0, 0, -258.073, 456.965 )
+}
+
+[sub_resource type="Curve2D" id=12]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 432.707, -256.228, 0, 0, 0, 0, 432.707, 1113.31 )
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.7717, 112.236 )
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Pathfinding" type="Node" index="0"]
+
+[node name="Paths" type="Node" parent="." index="0" groups=[
+"Cars",
+]]
+
+script = ExtResource( 1 )
+deployDelay = 0.8
+
+[node name="Path1-1" type="Path2D" parent="Paths" index="0"]
+
+position = Vector2( 15.9606, 160.834 )
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+direction = -1
+
+[node name="Path1-2" type="Path2D" parent="Paths" index="1"]
+
+curve = SubResource( 8 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path1-3" type="Path2D" parent="Paths" index="2"]
+
+position = Vector2( 0, -25.0008 )
+curve = SubResource( 8 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path1-4" type="Path2D" parent="Paths" index="3"]
+
+position = Vector2( 0, -54.0017 )
+curve = SubResource( 8 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path1-5" type="Path2D" parent="Paths" index="4"]
+
+position = Vector2( 0, -82.0026 )
+curve = SubResource( 8 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path1-6" type="Path2D" parent="Paths" index="5"]
+
+position = Vector2( 0, -82.0026 )
+curve = SubResource( 9 )
+script = ExtResource( 2 )
+direction = 1
+
+[node name="Path2-1" type="Path2D" parent="Paths" index="6"]
+
+position = Vector2( 0, -82.0026 )
+curve = SubResource( 10 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path2-2" type="Path2D" parent="Paths" index="7"]
+
+position = Vector2( 0.263489, -54.7391 )
+curve = SubResource( 10 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path2-3" type="Path2D" parent="Paths" index="8"]
+
+position = Vector2( 4, -29.0026 )
+curve = SubResource( 10 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path2-5" type="Path2D" parent="Paths" index="9"]
+
+position = Vector2( 3.72154, -28.0202 )
+scale = Vector2( 0.998313, 1.0042 )
+curve = SubResource( 11 )
+script = ExtResource( 2 )
+direction = -1
+
+[node name="Path2-4" type="Path2D" parent="Paths" index="10"]
+
+position = Vector2( 972.081, 924.84 )
+rotation = 3.13413
+curve = SubResource( 9 )
+script = ExtResource( 2 )
+direction = 1
+
+[node name="Path3-1" type="Path2D" parent="Paths" index="11"]
+
+position = Vector2( 991.321, -5.45337 )
+rotation = 1.57274
+scale = Vector2( 1, 1 )
+curve = SubResource( 9 )
+script = ExtResource( 2 )
+direction = 1
+
+[node name="Path3-2" type="Path2D" parent="Paths" index="12"]
+
+position = Vector2( 991.321, -5.45337 )
+rotation = 1.57274
+scale = Vector2( 1, 1 )
+curve = SubResource( 13 )
+script = ExtResource( 2 )
+direction = -1
+
+[node name="Path3-3" type="Path2D" parent="Paths" index="13"]
+
+position = Vector2( 991.321, -5.45337 )
+rotation = 1.57274
+scale = Vector2( 1, 1 )
+curve = SubResource( 14 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path4-1" type="Path2D" parent="Paths" index="14"]
+
+position = Vector2( 29.0305, 856.069 )
+rotation = -1.56981
+curve = SubResource( 9 )
+script = ExtResource( 2 )
+direction = 1
+
+[node name="Path4-3" type="Path2D" parent="Paths" index="15"]
+
+position = Vector2( 21, 0 )
+curve = SubResource( 12 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="Path4-4" type="Path2D" parent="Paths" index="16"]
+
+position = Vector2( 51, 0 )
+curve = SubResource( 12 )
+script = ExtResource( 2 )
+direction = 0
+
+[node name="DeployTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+_sections_unfolded = [ "Pause" ]
+
+[node name="Lights" type="Node" parent="." index="2"]
+
+[node name="Node2D4" parent="Lights" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 765.056, 422.135 )
+z_index = 5
+
+[node name="Node2D5" parent="Lights" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 765.056, 394.33 )
+z_index = 5
+
+[node name="Node2D6" parent="Lights" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 765.056, 367.525 )
+z_index = 5
+
+[node name="Node2D7" parent="Lights" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 765.056, 339.309 )
+z_index = 5
+
+[node name="Node2D8" parent="Lights" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 765.453, 312.695 )
+z_index = 5
+
+[node name="Node2D9" parent="Lights" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 257.716, 451.615 )
+rotation = 3.1408
+z_index = 5
+
+[node name="Node2D13" parent="Lights" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 394.649, 283.776 )
+rotation = 4.70423
+z_index = 5
+
+[node name="Node2D14" parent="Lights" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 454.807, 283.776 )
+rotation = 4.70423
+z_index = 5
+
+[node name="Node2D16" parent="Lights" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 539.574, 557.453 )
+rotation = 1.57144
+z_index = 5
+
+[node name="Node2D17" parent="Lights" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 568.437, 557.453 )
+rotation = 1.57144
+z_index = 5
+
+[node name="Node2D18" parent="Lights" index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 629.354, 558.209 )
+rotation = 1.57144
+z_index = 5
+
+[node name="Node2D15" parent="Lights" index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 483.543, 283.776 )
+rotation = 4.70423
+z_index = 5
+
+[node name="Node2D10" parent="Lights" index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 258.386, 480.047 )
+rotation = 3.1408
+z_index = 5
+
+[node name="Node2D11" parent="Lights" index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 258.386, 507.98 )
+rotation = 3.1408
+z_index = 5
+
+[node name="Node2D12" parent="Lights" index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 258.386, 535.649 )
+rotation = 3.1408
+z_index = 5
+
+[node name="GameOverColliders" type="Node" parent="." index="3"]
+
+[node name="Area2D" type="Area2D" parent="GameOverColliders" index="0" groups=[
+"Game_Over_Collider",
+]]
+
+position = Vector2( 1238.98, 498.633 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverColliders/Area2D" index="0"]
+
+position = Vector2( -194.576, -170.278 )
+shape = SubResource( 6 )
+
+[node name="Area2D2" type="Area2D" parent="GameOverColliders" index="1" groups=[
+"Game_Over_Collider",
+]]
+
+position = Vector2( 304.42, -100.968 )
+rotation = 1.57933
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverColliders/Area2D2" index="0"]
+
+position = Vector2( 75.6138, -187.584 )
+shape = SubResource( 6 )
+
+[node name="Area2D3" type="Area2D" parent="GameOverColliders" index="2" groups=[
+"Game_Over_Collider",
+]]
+
+position = Vector2( 548.701, 1207.42 )
+rotation = -1.54255
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverColliders/Area2D3" index="0"]
+
+position = Vector2( 416.815, 54.9034 )
+shape = SubResource( 6 )
+
+[node name="Area2D4" type="Area2D" parent="GameOverColliders" index="3" groups=[
+"Game_Over_Collider",
+]]
+
+position = Vector2( 13.8721, 598.566 )
+rotation = -3.20307
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverColliders/Area2D4" index="0"]
+
+position = Vector2( 42.2833, 72.3695 )
+rotation = 0.0609877
+shape = SubResource( 6 )
+
+[node name="ScoreLabel" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = 151.0
+margin_right = 310.0
+margin_bottom = 194.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Level_1" type="Sprite" parent="." index="5"]
+
+position = Vector2( 511.098, 442.239 )
+z_index = -5
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="timeout" from="DeployTimer" to="Paths" method="_on_DeployTimer_timeout"]
+
+

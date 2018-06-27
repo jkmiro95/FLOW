@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Traffic"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/StartScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,8 +20,8 @@ global="*res://Scripts/global.gd"
 
 [display]
 
-window/size/height=1024
-window/size/test_width=512
-window/size/test_height=512
+window/size/height=768
+window/size/test_width=1024
+window/size/test_height=768
 window/stretch/mode="2d"
 window/stretch/aspect="keep"

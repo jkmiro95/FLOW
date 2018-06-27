@@ -55,7 +55,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Pathfinding" type="Node" index="0"]
+[node name="Pathfinding" type="Node"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
@@ -72,7 +72,7 @@ __meta__ = {
 ]]
 
 script = ExtResource( 2 )
-deployDelay = 0.7
+deployDelay = 0.8
 
 [node name="Path1-1" type="Path2D" parent="Paths" index="0"]
 
@@ -227,7 +227,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverColliders/Area2D" index="0"]
 
-position = Vector2( -53.8561, 26.9432 )
+position = Vector2( -158.372, 104.194 )
 shape = SubResource( 6 )
 
 [node name="ScoreLabel" type="Label" parent="." index="5"]

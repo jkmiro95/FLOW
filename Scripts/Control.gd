@@ -8,5 +8,5 @@ func _ready():
 func _on_Button_pressed():
 	$Button.hide()
 	$Label.hide()
-	get_tree().change_scene("res://Scenes/Pathfinding/Pathfinding.tscn")
+	get_tree().change_scene("res://Scenes/Pathfinding/Level_1.tscn")
 	

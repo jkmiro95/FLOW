@@ -3,7 +3,7 @@ extends Node
 # EXPORT -------------------------
 var cars = [] 
 var lastPathIdx = 0;
-export var deployDelay = 0.7
+export var deployDelay = 0.8;
 onready var carobj = load("res://Scenes/Car.tscn");
 # ONREADY ------------------------
 
@@ -20,6 +20,7 @@ func _ready():
 
 func _on_DeployTimer_timeout():
 	print("tick!" + str(rand_range(0, 10000)))
+	randomize()
 	var randomIdx = rand_range(0, paths.size());
 	
 	while(randomIdx == lastPathIdx):

@@ -20,4 +20,4 @@ func _on_Button_pressed():
 	$Button.hide()
 	$Label.hide()
 	global.points = 0
-	get_tree().change_scene("res://Scenes/Pathfinding/Pathfinding.tscn")
+	get_tree().change_scene("res://Scenes/Pathfinding/Level_1.tscn")
