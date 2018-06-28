@@ -7,10 +7,7 @@ path="res://.import/preview_carspritespack.jpg-6f179a78ea53b91fe1b4f081f057f38e.
 [deps]
 
 source_file="res://Images/Vehicles/preview_carspritespack.jpg"
-source_md5="041774f29cdd456a1917a06d1591b665"
-
 dest_files=[ "res://.import/preview_carspritespack.jpg-6f179a78ea53b91fe1b4f081f057f38e.stex" ]
-dest_md5="39a3e1737942fca84cc36eee56423f0b"
 
 [params]
 

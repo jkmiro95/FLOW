@@ -7,10 +7,7 @@ path="res://.import/MapSketch.jpg-97f87deadadf7cb53cb4e39136f51805.stex"
 [deps]
 
 source_file="res://Images/Map/MapSketch.jpg"
-source_md5="1201bf52af66a672c228e0376db7825a"
-
 dest_files=[ "res://.import/MapSketch.jpg-97f87deadadf7cb53cb4e39136f51805.stex" ]
-dest_md5="4b49109d32a19019ac4df61268893d1d"
 
 [params]
 

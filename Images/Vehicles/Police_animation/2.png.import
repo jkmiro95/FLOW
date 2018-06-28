@@ -7,10 +7,7 @@ path="res://.import/2.png-efbd59bf6c92526f39b9d240688b249a.stex"
 [deps]
 
 source_file="res://Images/Vehicles/Police_animation/2.png"
-source_md5="b8a410f0181c07c2fb2a7726da2b5a9a"
-
 dest_files=[ "res://.import/2.png-efbd59bf6c92526f39b9d240688b249a.stex" ]
-dest_md5="7976789b2a14e0287e57a045144b7a11"
 
 [params]
 

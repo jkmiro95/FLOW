@@ -7,10 +7,7 @@ path="res://.import/2.png-76a92aab86070900dc0e2173f44027db.stex"
 [deps]
 
 source_file="res://Images/Vehicles/ambulance_animation/2.png"
-source_md5="a8f016b9f54043d7231deea939e2ede1"
-
 dest_files=[ "res://.import/2.png-76a92aab86070900dc0e2173f44027db.stex" ]
-dest_md5="0c23eb78ca3400c46c30196ee91184dd"
 
 [params]
 

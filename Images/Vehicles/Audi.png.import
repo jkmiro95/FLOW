@@ -7,10 +7,7 @@ path="res://.import/Audi.png-33ab9e7261464646ca77f60464dca4a6.stex"
 [deps]
 
 source_file="res://Images/Vehicles/Audi.png"
-source_md5="419166b69b644ea269d638aeb1ecd450"
-
 dest_files=[ "res://.import/Audi.png-33ab9e7261464646ca77f60464dca4a6.stex" ]
-dest_md5="b3dd42b065e0a6ce79290bd69f1aed97"
 
 [params]
 

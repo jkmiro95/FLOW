@@ -7,10 +7,7 @@ path="res://.import/boom3.png-24a37e9828b986dc98af64f09eb78ae8.stex"
 [deps]
 
 source_file="res://Scenes/boom3.png"
-source_md5="3172e300cf7c040566fb873e001c706b"
-
 dest_files=[ "res://.import/boom3.png-24a37e9828b986dc98af64f09eb78ae8.stex" ]
-dest_md5="71217b7044a93c1df012c684d34946e3"
 
 [params]
 

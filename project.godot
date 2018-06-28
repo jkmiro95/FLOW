@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://Scripts/global.gd"
+HighScores="*res://Scenes/HighScores.gd"
 
 [display]
 

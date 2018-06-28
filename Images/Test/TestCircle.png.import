@@ -7,10 +7,7 @@ path="res://.import/TestCircle.png-252b0e768ad48580e7e81209305ce74b.stex"
 [deps]
 
 source_file="res://Images/Test/TestCircle.png"
-source_md5="7435b591830759267b0a7ad84d7ab21f"
-
 dest_files=[ "res://.import/TestCircle.png-252b0e768ad48580e7e81209305ce74b.stex" ]
-dest_md5="1a2d2df5c6102fe2871406f24b8842bb"
 
 [params]
 

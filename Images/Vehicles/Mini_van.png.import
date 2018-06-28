@@ -7,10 +7,7 @@ path="res://.import/Mini_van.png-259f8e6ef19ca11208396ece02ec1864.stex"
 [deps]
 
 source_file="res://Images/Vehicles/Mini_van.png"
-source_md5="bd4598b7fcb5150eed951e2d9dd6b4ed"
-
 dest_files=[ "res://.import/Mini_van.png-259f8e6ef19ca11208396ece02ec1864.stex" ]
-dest_md5="6f3cac2eed405ab321513b7495eccb33"
 
 [params]
 

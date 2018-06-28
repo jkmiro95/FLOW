@@ -7,10 +7,7 @@ path="res://.import/CarLight.png-628896c812a7b13387b3eeceb186f268.stex"
 [deps]
 
 source_file="res://Images/CarLight.png"
-source_md5="b4a02e4871ad29954663ec26495a1bb4"
-
 dest_files=[ "res://.import/CarLight.png-628896c812a7b13387b3eeceb186f268.stex" ]
-dest_md5="c416d9f412a0ebc81cbb8de53486bab2"
 
 [params]
 

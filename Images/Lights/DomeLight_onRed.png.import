@@ -7,10 +7,7 @@ path="res://.import/DomeLight_onRed.png-6c86222346475ecabe40181614a12d0c.stex"
 [deps]
 
 source_file="res://Images/Lights/DomeLight_onRed.png"
-source_md5="7e076931fd7ea4e2bac746129de5d56e"
-
 dest_files=[ "res://.import/DomeLight_onRed.png-6c86222346475ecabe40181614a12d0c.stex" ]
-dest_md5="880fb40efb383e834fa5053e063266ea"
 
 [params]
 

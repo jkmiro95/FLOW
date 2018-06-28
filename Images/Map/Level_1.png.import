@@ -7,10 +7,7 @@ path="res://.import/Level_1.png-1deb27a8204bd3dee1fd5aba86dae509.stex"
 [deps]
 
 source_file="res://Images/Map/Level_1.png"
-source_md5="0f5681cc8471c406a5de4127497a8eb0"
-
 dest_files=[ "res://.import/Level_1.png-1deb27a8204bd3dee1fd5aba86dae509.stex" ]
-dest_md5="2d5b5b3056a93b62e03c34e65ff94569"
 
 [params]
 

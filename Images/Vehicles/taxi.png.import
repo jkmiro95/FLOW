@@ -7,10 +7,7 @@ path="res://.import/taxi.png-2b2281cf92f4357ade8677ba3a899534.stex"
 [deps]
 
 source_file="res://Images/Vehicles/taxi.png"
-source_md5="34bf14ef9f5860b8f55a42ed6bfae435"
-
 dest_files=[ "res://.import/taxi.png-2b2281cf92f4357ade8677ba3a899534.stex" ]
-dest_md5="9773dd4f607bd6beb1f196f1073225b5"
 
 [params]
 
